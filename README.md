@@ -7,6 +7,7 @@
 * [SEG]: 新加入的segmentation头，支持分割
 
 
+
 使用[CelebAMask-HQ](https://github.com/switchablenorms/CelebAMask-HQ) 数据集，`w16_s1.cfg`定义的分割网络
 
 骁龙855 DSP上推理时间约为10ms
