@@ -2,15 +2,17 @@
 
 新的config文件，可参考`w16_s1.cfg`文件
 
-使用[CelebAMask-HQ](https://github.com/switchablenorms/CelebAMask-HQ）数据集，`w16_s1.cfg`定义的分割网络
+使用[CelebAMask-HQ](https://github.com/switchablenorms/CelebAMask-HQ) 数据集，`w16_s1.cfg`定义的分割网络
 
 骁龙855 DSP上推理时间约为10ms
 
 
 使用方法，可参考原始tf-hrnet。
+
 另，一些转换代码、推理代码放在tools目录下。
 
 以下是原始的[tf-hrnet](https://github.com/yuanyuanli85/tf-hrnet)相关readme
+
 -----------
 
 # hrnet-tf
