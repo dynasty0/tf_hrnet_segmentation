@@ -2,6 +2,11 @@
 
 新的config文件，可参考`w16_s1.cfg`文件
 
+* [MODEL][type]: 0是分类（原始的tf-hrnet），1为分割
+* [QUANT]: 是否量化，>=0 量化， <0不量化
+* [SEG]: 新加入的segmentation头，支持分割
+
+
 使用[CelebAMask-HQ](https://github.com/switchablenorms/CelebAMask-HQ) 数据集，`w16_s1.cfg`定义的分割网络
 
 骁龙855 DSP上推理时间约为10ms
