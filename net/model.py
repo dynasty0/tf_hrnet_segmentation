@@ -85,7 +85,7 @@ class HRNet():
         else:
             size = labels.get_shape()[1:3]
             outputs = tf.image.resize_images(outputs, size)
-            loss = tf.reduce_mean(tf.losses.sparse_softmax_cross_entropy(tf.squeeze(tf.to_int32(label),3), outputs))
+            loss = tf.reduce_mean(tf.losses.sparse_softmax_cross_entropy(tf.squeeze(tf.to_int32(labels),3), outputs))
             l2_loss = tf.add_n([tf.nn.l2_loss(var) * self.cfg['NET']['weight_l2_scale'] for var in trainable_vars ])
             loss += l2_loss
             seg_output = tf.arg_max(outputs, axis = -1)
