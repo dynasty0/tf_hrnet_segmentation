@@ -224,7 +224,7 @@ class Trainer():
         #                       for name, value in zip(self.log_op_names, log_rslt)])
         log_str = ''
         for ii,name in enumerate(self.log_op_names):
-            if name != 'uo_op':
+            if name != 'up_op':
                 log_str = log_str + ' | %s = %.4f' % (name, log_rslt[ii])
         tf.logging.info('iter #%d: %s | speed = %.2f pics / sec' % (idx_iter + 1, log_str, speed))
 
