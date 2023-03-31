@@ -1,3 +1,8 @@
+import os
+import sys
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(base_dir)
+
 import tensorflow as tf
 from trainer.trainer import Trainer
 from utils.multi_gpu_wrapper import MultiGpuWrapper as mgw
