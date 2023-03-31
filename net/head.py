@@ -28,7 +28,7 @@ class SegHead():
             output = tf.concat(feature_list, -1)
         output = self.last_layer(output)
         output = tf.identity(output, 'seg_result')
-
+        return output
 
 class ClsHead():
 
