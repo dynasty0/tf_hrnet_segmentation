@@ -112,7 +112,7 @@ class Trainer():
                 if FLAGS.enbl_multi_gpu:
                     self.bcast_op = mgw.broadcast_global_variables(0)
                 # self.saver_train = tf.train.Saver(self.vars)
-                self.saver_all = tf.train.Saver(self.vars)
+                self.saver_all = tf.train.Saver()
             else:
                 self.sess_eval = sess
                 sess.run(tf.local_variables_initializer())
@@ -155,14 +155,14 @@ class Trainer():
             # save and eval the model at certain steps
             if self.is_primary_worker('global') and (idx_iter + 1) % self.save_step == 0:
                 # save model
-                self.saver_train.save(self.sess_train, os.path.join(self.model_path, 'model.ckpt'),
+                self.saver_all.save(self.sess_train, os.path.join(self.model_path, 'model.ckpt'),
                                       global_step=self.global_step)
                 self.eval()
 
         # save the final model
         if self.is_primary_worker('global'):
             # save model
-            self.saver_train.save(self.sess_train, os.path.join(self.model_path, 'model.ckpt'),
+            self.saver_all.save(self.sess_train, os.path.join(self.model_path, 'model.ckpt'),
                                   global_step=self.global_step)
             self.eval()
 
