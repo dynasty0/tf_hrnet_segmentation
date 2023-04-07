@@ -34,7 +34,8 @@ output = tf.image.resize_images(output, (512,512) )
 out = tf.identity(output, name = "output")
 
 g = tf.get_default_graph()
-tf.contrib.quantize.create_eval_graph(input_graph = g)
+with tf.variable_scope('HRNET'):
+    tf.contrib.quantize.create_eval_graph(input_graph = g)
 saver = tf.train.Saver(tf.all_variables())
 graph_def = tf.get_default_graph().as_graph_def(add_shapes=True)
 freeze_graph.freeze_graph_with_def_protos(
